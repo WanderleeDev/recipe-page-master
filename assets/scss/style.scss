@@ -1,0 +1,60 @@
+@use '../scss/base/reset.scss' as *;
+@use '../scss/base/typography.scss' as *;
+@use '../scss/utils/shared.scss' as *;
+
+
+
+body{
+  display: grid;
+  font-family: 'Montserrat';
+  color: var(--negro);
+  background-color: var(--blanco);
+  padding: rem(16);
+}
+
+.header{
+
+  .header-title{
+    font-size: rem(24);
+    font-weight: 700;
+    line-height: rem(31.99);
+    text-align: center;
+    font-family: 'PlayfairDisplay', serif;
+  }
+}
+
+.main{
+  display: grid;
+  
+  .container{
+    &-content{
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: rem(16);
+    }
+
+    &-icon{
+      width: rem(16);
+      aspect-ratio: 4/3;
+      object-fit: contain;
+
+    }
+
+    &-description{
+      font-size: rem(12);
+      font-weight: 500;
+      font-style: italic;
+      line-height: rem(14.6);
+    }
+  
+    &-img{
+      margin-top: rem(16);
+      border-radius: rem(12);
+      aspect-ratio:8/5;
+      object-fit: cover;
+      object-position: bottom;
+    }
+  }
+
+  
+}

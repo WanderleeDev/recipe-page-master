@@ -1,0 +1,231 @@
+@charset "UTF-8";
+/* Definimos las Custom properties */
+:root {
+  /* Colores */
+  --negro: #393939;
+  --blanco:#ececec;
+  --blancoPlus:#ededed66;
+  --negroPlus:#39393966;
+  --blancoDark:#fff;
+  --negroDark:#000;
+  /* Tipografía */
+  --tipo-principal: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+/* (Opcional) Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+    --blanco:#393939;
+    --negroPlus:#ededed66;
+    --blancoPlus:#39393966;
+    --blancoDark:#000;
+    --negroDark:#fff;
+  }
+}
+/* (Opcional) Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before, *::after {
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* (Opcional) */
+  object-fit: cover;
+  /* (Opcional) */
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  appearance: none;
+}
+
+input[type=checkbox] {
+  display: initial;
+  appearance: auto;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: var(--tipo-principal);
+  text-rendering: optimizeLegibility;
+  color: var(--negro);
+  /* (Opcional) */
+  /* (Opcional) */
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/assets/fonts/PlayfairDisplay/PlayfairDisplay-normal.woff2") format("woff2-variations");
+  font-display: swap;
+  font-weight: 100 1000;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/assets/fonts/PlayfairDisplay/PlayfairDisplay-Italic-.woff2") format("woff2-variations");
+  font-display: swap;
+  font-weight: 100 1000;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/Montserrat/Montserrat-normal.woff2") format("woff2-variations");
+  font-display: swap;
+  font-weight: 100 1000;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/Montserrat/Montserrat-Italic.woff2") format("woff2-variations");
+  font-display: swap;
+  font-weight: 100 1000;
+  font-style: italic;
+}
+/*
+Example:
+body{
+  font-size: rem(32);
+}
+*/
+/*
+Example:
+main{
+  @include flex(flex, row, wrap, space-around, center, 1rem);
+}
+*/
+body {
+  display: grid;
+  font-family: "Montserrat";
+  color: var(--negro);
+  background-color: var(--blanco);
+  padding: 1rem;
+}
+
+.header .header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.999375rem;
+  text-align: center;
+  font-family: "PlayfairDisplay", serif;
+}
+
+.main {
+  display: grid;
+}
+.main .container-content {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 1rem;
+}
+.main .container-icon {
+  width: 1rem;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+}
+.main .container-description {
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 0.9125rem;
+}
+.main .container-img {
+  margin-top: 1rem;
+  border-radius: 0.75rem;
+  aspect-ratio: 8/5;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+/*# sourceMappingURL=style.css.map */
