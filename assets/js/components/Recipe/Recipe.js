@@ -12,11 +12,13 @@ const Recipe = () => {
         paragraph.map((p) => {
           const {stepNumber, description, textStrong} = p;
 
-          console.log(textStrong);
-
           return(`
           <li class="listSteps-step">
-            <span class="listSteps-index">${stepNumber}</span>
+            <div class="listSteps-index">
+              <div> 
+              ${stepNumber}
+              </div>
+            </div>
             <p class="listSteps-description">
             ${textStrong ? `<strong class="listSteps-bold">${textStrong}</strong>` : '' }
             ${description}

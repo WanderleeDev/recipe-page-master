@@ -189,6 +189,8 @@ body {
   background-color: var(--whitePlus);
   color: var(--blackPlus);
   padding: 1rem;
+  max-width: 60.5625rem;
+  margin-inline: auto;
 }
 
 :where(h1, h2, h3) {
@@ -201,10 +203,28 @@ body {
   line-height: 1.999375rem;
   text-align: center;
 }
+@media screen and (min-width: 62.5rem) {
+  .header .header-title {
+    font-size: 3rem;
+    line-height: 3.99875rem;
+    text-align: left;
+  }
+}
 
 .main {
   display: grid;
   gap: 2rem;
+}
+@media screen and (min-width: 62.5rem) {
+  .main {
+    gap: 3rem;
+  }
+}
+@media screen and (min-width: 62.5rem) {
+  .main .container {
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+  }
 }
 .main .container-content {
   display: grid;
@@ -222,19 +242,46 @@ body {
   font-weight: 500;
   font-style: italic;
   line-height: 1rem;
+  max-width: 36.5625rem;
 }
 .main .container-img {
+  max-width: 60.5625rem;
   margin-top: 1rem;
   border-radius: 0.75rem;
   aspect-ratio: 8/5;
   object-fit: cover;
   object-position: bottom;
 }
+@media screen and (min-width: 62.5rem) {
+  .main .container-img {
+    height: 29.375rem;
+    object-fit: fill;
+  }
+}
 .main .card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: self-start;
   gap: 2rem 1rem;
+}
+@media screen and (min-width: 62.5rem) {
+  .main .card {
+    grid-area: 2/1/3/2;
+    grid-template-columns: 1fr;
+    justify-self: end;
+    place-items: center;
+    gap: 0;
+    width: 13.5rem;
+    height: 22.9375rem;
+    padding: 2rem 0;
+    border-radius: 0.75rem;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1019607843);
+  }
+}
+@media screen and (min-width: 62.5rem) and (prefers-color-scheme: dark) {
+  .main .card {
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.4196078431);
+  }
 }
 .main .card-item {
   display: grid;
@@ -244,11 +291,26 @@ body {
 .main .card-item:nth-of-type(2) {
   grid-area: 2/1/3/2;
 }
+@media screen and (min-width: 62.5rem) {
+  .main .card-item:nth-of-type(2) {
+    grid-area: initial;
+  }
+}
 .main .card-item:nth-of-type(3) {
   grid-area: 2/2/3/3;
 }
+@media screen and (min-width: 62.5rem) {
+  .main .card-item:nth-of-type(3) {
+    grid-area: initial;
+  }
+}
 .main .card-item:nth-of-type(4) {
   grid-area: 2/3/3/4;
+}
+@media screen and (min-width: 62.5rem) {
+  .main .card-item:nth-of-type(4) {
+    grid-area: initial;
+  }
 }
 .main .card-icon {
   grid-row: 1/3;
@@ -256,6 +318,11 @@ body {
   width: 1.25rem;
   aspect-ratio: 1/1;
   align-self: center;
+}
+@media screen and (min-width: 62.5rem) {
+  .main .card-icon {
+    width: 1.6875rem;
+  }
 }
 .main .card-indication {
   grid-column: 2/3;
@@ -266,16 +333,39 @@ body {
   line-height: 0.609375rem;
   color: var(--clr-auxiliar);
 }
+@media screen and (min-width: 62.5rem) {
+  .main .card-indication {
+    font-size: 0.625rem;
+    line-height: 0.761875rem;
+  }
+}
 .main .card-extraData {
   font-size: 0.625rem;
   grid-column: 2/3;
   grid-row: 2/3;
   font-weight: 500;
 }
+@media screen and (min-width: 62.5rem) {
+  .main .card-extraData {
+    font-size: 0.875rem;
+    line-height: 1.10625rem;
+  }
+}
+@media screen and (min-width: 62.5rem) {
+  .main .recipe {
+    grid-area: 2/1/3/2;
+  }
+}
 .main .recipe-title {
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.5rem;
+}
+@media screen and (min-width: 62.5rem) {
+  .main .recipe-title {
+    font-size: 1.5rem;
+    line-height: 1.999375rem;
+  }
 }
 .main .recipe-ingredients {
   display: grid;
@@ -288,6 +378,12 @@ body {
   line-height: 1.333125rem;
   padding: 1rem 0;
 }
+@media screen and (min-width: 62.5rem) {
+  .main .recipe .list-subTitle {
+    font-size: 1.125rem;
+    line-height: 1.499375rem;
+  }
+}
 .main .recipe .list-ingredients {
   display: grid;
   gap: 0.5rem;
@@ -297,15 +393,29 @@ body {
   font-weight: 400;
   line-height: 1.5625rem;
 }
+@media screen and (min-width: 62.5rem) {
+  .main .recipe .list-item {
+    font-size: 1rem;
+    line-height: 1.5625rem;
+  }
+}
 .main .recipe .list-label {
   display: grid;
   grid-template-columns: min-content auto;
   gap: 0.7rem;
+  align-items: self-start;
 }
 .main .recipe .list-check {
-  transform: scale(1.3) translateY(0.1rem);
-  align-self: self-start;
+  transform: scale(1.3) translateY(0.2rem);
   accent-color: #F2994A;
+}
+@media screen and (min-width: 62.5rem) {
+  .main .recipe .list-check {
+    transform: scale(1.4) translateY(0.2rem);
+  }
+}
+.main .recipe .list-details {
+  max-width: 33.0625rem;
 }
 .main .recipe .list-details strong {
   font-weight: 700;
@@ -316,9 +426,15 @@ body {
   line-height: 1.999375rem;
   padding: 1rem 0;
 }
+@media screen and (min-width: 62.5rem) {
+  .main .instructionsContainer-title {
+    padding-bottom: 2rem;
+  }
+}
 .main .instructionsContainer .listSteps {
   display: grid;
   gap: 1.5rem;
+  justify-items: flex-start;
 }
 .main .instructionsContainer .listSteps-step {
   display: grid;
@@ -339,7 +455,11 @@ body {
   border-radius: 0.375rem;
   transform: translateY(-0.2rem);
 }
+.main .instructionsContainer .listSteps-index div {
+  transform: translateY(-0.2rem);
+}
 .main .instructionsContainer .listSteps-description {
+  max-width: 33.0625rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.375rem;
@@ -358,6 +478,13 @@ body {
   color: #BDBDBD;
   gap: 0 0.2rem;
   padding: 2rem 0;
+}
+@media screen and (min-width: 62.5rem) {
+  .main .reference {
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+    padding: 2rem 0;
+  }
 }
 .main .reference-link:hover {
   color: #F2994A;

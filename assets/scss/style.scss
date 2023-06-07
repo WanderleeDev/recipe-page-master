@@ -12,6 +12,8 @@ body{
   background-color: var(--whitePlus);
   color: var(--blackPlus);
   padding: rem(16);
+  max-width: rem(969);
+  margin-inline: auto;
 }
 
 :where(h1,h2,h3){
@@ -25,14 +27,27 @@ body{
     font-weight: 700;
     line-height: rem(31.99);
     text-align: center;
+    @media screen and (min-width: rem(1000)){
+      font-size: rem(48);
+      line-height: rem(63.98);
+      text-align: left;
+    }
   }
 }
 
 .main{
   display: grid;
   gap: 2rem;
+  @media screen and (min-width: rem(1000)){
+    gap: 3rem;
+  }
   
   .container{
+
+    @media screen and (min-width: rem(1000)){
+      font-size: rem(14);
+      line-height: rem(17);
+    }
     &-content{
       display: grid;
       grid-template-columns: max-content 1fr;
@@ -52,14 +67,21 @@ body{
       font-weight: 500;
       font-style: italic;
       line-height: rem(16);
+      max-width: rem(585);
     }
   
     &-img{
+      max-width: rem(969);
       margin-top: rem(16);
       border-radius: rem(12);
       aspect-ratio:8/5;
       object-fit: cover;
       object-position: bottom;
+
+      @media screen and (min-width: rem(1000)){
+        height: rem(470);
+        object-fit: fill;
+      }  
     }
   }
   //component card
@@ -68,19 +90,46 @@ body{
     grid-template-columns: repeat(3, 1fr);
     justify-items: self-start;
     gap: 2rem 1rem;
+    @media screen and (min-width: rem(1000)){
+      grid-area: 2/1/3/2;
+      grid-template-columns: 1fr;
+      justify-self: end;
+      place-items: center;
+      gap: 0;
+      width: rem(216);
+      height: rem(367);
+      padding: 2rem 0;
+      border-radius: rem(12);
+      box-shadow: 0px 0px 15px 0px #0000001A;
+
+      @media (prefers-color-scheme: dark) {
+        box-shadow: 0px 0px 20px 0px #ffffff6b;
+      }
+    }
+
     
     &-item{
       display: grid;
       grid-template-columns: min-content, max-content;
       gap: 0 .5rem;
+
       &:nth-of-type(2){
         grid-area: 2/1/3/2;
+        @media screen and (min-width: rem(1000)){
+          grid-area: initial;
+        }
       }
       &:nth-of-type(3){
         grid-area: 2/2/3/3;
+        @media screen and (min-width: rem(1000)){
+          grid-area: initial;
+        }
       }
       &:nth-of-type(4){
         grid-area: 2/3/3/4;
+        @media screen and (min-width: rem(1000)){
+          grid-area: initial;
+        }
       }
     }
 
@@ -90,6 +139,9 @@ body{
       width: rem(20);
       aspect-ratio: 1/1;
       align-self: center;
+      @media screen and (min-width: rem(1000)){
+        width: rem(27);
+      }
     }
 
     &-indication{
@@ -100,6 +152,10 @@ body{
       font-weight: 700;
       line-height: rem(9.75);
       color: var(--clr-auxiliar);
+      @media screen and (min-width: rem(1000)){
+        font-size: rem(10);
+        line-height: rem(12.19);
+      }
     }
     
     &-extraData{
@@ -107,15 +163,27 @@ body{
       grid-column: 2/3;
       grid-row: 2/3;
       font-weight: 500;
+      @media screen and (min-width: rem(1000)){
+        font-size: rem(14);
+        line-height: rem(17.7);
+      }
     }
   }
 
+  //component recipe
   .recipe{
+    @media screen and (min-width: rem(1000)){
+      grid-area: 2/1/3/2;
+    }
     
     &-title{
       font-size: rem(18);
       font-weight: 700;
       line-height: rem(24);
+      @media screen and (min-width: rem(1000)){
+        font-size: rem(24);
+        line-height: rem(31.99);
+      }
     }
 
     &-ingredients{
@@ -123,45 +191,53 @@ body{
       gap: 2rem;
     }
 
-    &-list{
-
-    }
-
     .list{
-      
       &-subTitle{
         font-size: rem(16);
         font-weight: 400;
         font-style: italic;
         line-height: rem(21.33);
         padding: 1rem 0;
+        @media screen and (min-width: rem(1000)){
+          font-size: rem(18);
+          line-height: rem(23.99);
+        }
       }
 
       &-ingredients{
         display: grid;
         gap: .5rem;
-
       }
 
       &-item{
         font-size: rem(13);
         font-weight: 400;
         line-height: rem(25);
+        @media screen and (min-width: rem(1000)){
+          font-size: rem(16);
+          line-height: rem(25);
+        }
       }
 
       &-label{
         display: grid;
         grid-template-columns: min-content auto;
         gap: .7rem;
+        align-items: self-start;
       }
 
       &-check{
-        transform: scale(1.3) translateY(.1rem);
-        align-self: self-start;
+        transform: scale(1.3) translateY(0.2rem);
         accent-color: map-get($colors, primary );
+
+        @media screen and (min-width: rem(1000)){
+          transform: scale(1.4) translateY(0.2rem);
+        }
       }
 
       &-details{
+        max-width: rem(529);
+
         strong{
           font-weight: 700;
         }
@@ -180,11 +256,16 @@ body{
       font-weight: 700;
       line-height: rem(31.99);
       padding: 1rem 0;
+      @media screen and (min-width: rem(1000)){
+        padding-bottom: 2rem;
+      }
+
     }
     
     .listSteps{
       display: grid;
       gap: 1.5rem;
+      justify-items: flex-start;
 
       &-step{
         display: grid;
@@ -205,9 +286,14 @@ body{
         color: #fff;
         border-radius: rem(6);
         transform: translateY(-.2rem);
+
+        div{
+          transform: translateY(-.2rem);
+        }
       }
 
       &-description{
+        max-width: rem(529);
         font-size: rem(16);
         font-weight: 400;
         line-height: rem(22);
@@ -230,6 +316,11 @@ body{
     color: #BDBDBD;
     gap: 0 .2rem;
     padding: 2rem 0;
+    @media screen and (min-width: rem(1000)){
+      font-size: rem(12);
+      line-height: rem(24);
+      padding: 2rem 0;
+    }
 
     &-link{
       &:hover{
