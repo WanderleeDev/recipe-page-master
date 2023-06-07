@@ -20,7 +20,7 @@ const ListIngredients = () =>{
               <li class="list-item">
                 <label class="list-label" for=${id}>
                   <input class="list-check" aria-label="Marcar ingrediente" type="checkbox" name=${id} id=${id}>
-                  <p class="list-details">${item}<(p>
+                  <p class="list-details">${item}<p>
                 </label>
               </li>
             `).trim('');
@@ -39,7 +39,7 @@ const ListIngredients = () =>{
               <li class="list-item">
                 <label class="list-label" for=${id}>
                   <input class="list-check" aria-label="Marcar ingrediente" type="checkbox" name=${id} id=${id}>
-                  <p class="list-details">${item}<(p>
+                  <p class="list-details">${item}<p>
                 </label>
               </li>
             `).trim('');

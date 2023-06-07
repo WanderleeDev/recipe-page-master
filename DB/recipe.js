@@ -41,15 +41,15 @@ const recipe ={
       "recipe1": [
         {
           "id": "item1",
-          "item": "-1 and 1/2 cups (150g) <strong>graham cracker crumbs</strong> (about 10 full sheet graham crackers)"
+          "item": "1 and 1/2 cups (150g) <strong>graham cracker crumbs</strong> (about 10 full sheet graham crackers)"
         },
         {
           "id": "item2",
-          "item": "-5 Tablespoons (70g) <strong>unsalted butter</strong>, melted"
+          "item": "5 Tablespoons (70g) <strong>unsalted butter</strong>, melted"
         },
         {
           "id": "item3",
-          "item": "-1/4 cup (50g) <strong>granulated sugar </strong>"
+          "item": "1/4 cup (50g) <strong>granulated sugar </strong>"
         }
       ]
     },
@@ -57,27 +57,27 @@ const recipe ={
       "recipe2": [
         {
           "id": "item4",
-          "item": "-four 8-ounce blocks (904g) full-fat <strong> cream cheese</strong>, softened to room temperature"
+          "item": "four 8-ounce blocks (904g) full-fat <strong> cream cheese</strong>, softened to room temperature"
         },
         {
           "id": "item5",
-          "item": "-1 cup (200g)  <strong> granulated sugar </strong>"
+          "item": "1 cup (200g)  <strong> granulated sugar </strong>"
         },
         {
           "id": "item6",
-          "item": "-1 cup (240g) full-fat <strong> sour cream</strong>, at room temperature"
+          "item": "1 cup (240g) full-fat <strong> sour cream</strong>, at room temperature"
         },
         {
           "id": "item7",
-          "item": "-1 teaspoon <strong>pure vanilla extract</strong>"
+          "item": "1 teaspoon <strong>pure vanilla extract</strong>"
         },
         {
           "id": "item8",
-          "item": "-2 teaspoons <strong>fresh lemon juice</strong> (optional, but recommended)"
+          "item": "2 teaspoons <strong>fresh lemon juice</strong> (optional, but recommended)"
         },
         {
           "id": "item9",
-          "item": "-3 large <strong>eggs</strong>, at room temperature"
+          "item": "3 large <strong>eggs</strong>, at room temperature"
         },
         {
           "id": "item10",

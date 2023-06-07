@@ -2,14 +2,21 @@
 @use '../scss/base/typography.scss' as *;
 @use '../scss/utils/shared.scss' as *;
 
-
+*{
+ // border: SOLID RED 1px;
+}
 
 body{
+  --clr-auxiliar: #BDBDBD;
   display: grid;
   font-family: 'Montserrat';
   color: var(--negro);
-  background-color: var(--blanco);
+  background-color: #fff;
   padding: rem(16);
+}
+
+:where(h1,h2,h3){
+  font-family: 'PlayfairDisplay', serif;
 }
 
 .header{
@@ -19,18 +26,19 @@ body{
     font-weight: 700;
     line-height: rem(31.99);
     text-align: center;
-    font-family: 'PlayfairDisplay', serif;
   }
 }
 
 .main{
   display: grid;
+  gap: 2rem;
   
   .container{
     &-content{
       display: grid;
       grid-template-columns: max-content 1fr;
       gap: rem(16);
+      padding: 1rem 0;
     }
 
     &-icon{
@@ -44,7 +52,7 @@ body{
       font-size: rem(12);
       font-weight: 500;
       font-style: italic;
-      line-height: rem(14.6);
+      line-height: rem(16);
     }
   
     &-img{
@@ -55,6 +63,110 @@ body{
       object-position: bottom;
     }
   }
+  //component card
+  .card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: self-start;
+    gap: 2rem 1rem;
+    
+    &-item{
+      display: grid;
+      grid-template-columns: min-content, max-content;
+      gap: 0 .5rem;
+      &:nth-of-type(2){
+        grid-area: 2/1/3/2;
+      }
+      &:nth-of-type(3){
+        grid-area: 2/2/3/3;
+      }
+      &:nth-of-type(4){
+        grid-area: 2/3/3/4;
+      }
+    }
 
-  
+    &-icon{
+      grid-row: 1/3;
+      grid-column: 1/2;
+      width: rem(20);
+      aspect-ratio: 1/1;
+      align-self: center;
+    }
+
+    &-indication{
+      grid-column: 2/3;
+      grid-row: 1/2;
+      font-size: rem(8);
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: rem(9.75);
+      color: var(--clr-auxiliar);
+    }
+    
+    &-extraData{
+      font-size: rem(10);
+      grid-column: 2/3;
+      grid-row: 2/3;
+      font-weight: 500;
+    }
+  }
+
+  .recipe{
+    
+    &-title{
+      font-size: rem(18);
+      font-weight: 700;
+      line-height: rem(24);
+    }
+
+    &-ingredients{
+      display: grid;
+      gap: 2rem;
+    }
+
+    &-list{
+
+    }
+
+    .list{
+      
+      &-subTitle{
+        font-size: rem(16);
+        font-weight: 400;
+        font-style: italic;
+        line-height: rem(21.33);
+        padding: 1rem 0;
+      }
+
+      &-ingredients{
+        display: grid;
+        gap: .5rem;
+
+      }
+
+      &-item{
+        font-size: rem(13);
+        font-weight: 400;
+        line-height: rem(25);
+      }
+
+      &-label{
+        display: grid;
+        grid-template-columns: min-content auto;
+        gap: .7rem;
+      }
+
+      &-check{
+        transform: scale(1.3) translateY(.1rem);
+        align-self: self-start;
+        accent-color: map-get($colors, primary );
+      }
+
+      &-details{
+        strong{
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }
