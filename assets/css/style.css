@@ -4,10 +4,8 @@
   /* Colores */
   --negro: #393939;
   --blanco:#ececec;
-  --blancoPlus:#ededed66;
-  --negroPlus:#39393966;
-  --blancoDark:#fff;
-  --negroDark:#000;
+  --whitePlus: #fff;
+  --blackPlus: #000;
   /* Tipografía */
   --tipo-principal: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   --tipo-secundaria: Verdana;
@@ -18,10 +16,8 @@
   :root {
     --negro: #ececec;
     --blanco:#393939;
-    --negroPlus:#ededed66;
-    --blancoPlus:#39393966;
-    --blancoDark:#000;
-    --negroDark:#fff;
+    --whitePlus: #000;
+    --blackPlus: #fff;
   }
 }
 /* (Opcional) Configuramos si un usuario ha activado el modo alto contraste. (WD) */
@@ -190,7 +186,8 @@ body {
   display: grid;
   font-family: "Montserrat";
   color: var(--negro);
-  background-color: #fff;
+  background-color: var(--whitePlus);
+  color: var(--blackPlus);
   padding: 1rem;
 }
 
@@ -312,6 +309,73 @@ body {
 }
 .main .recipe .list-details strong {
   font-weight: 700;
+}
+.main .instructionsContainer-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.999375rem;
+  padding: 1rem 0;
+}
+.main .instructionsContainer .listSteps {
+  display: grid;
+  gap: 1.5rem;
+}
+.main .instructionsContainer .listSteps-step {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1rem;
+}
+.main .instructionsContainer .listSteps-index {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  font-family: "PlayfairDisplay", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.999375rem;
+  background-color: #F2994A;
+  color: #fff;
+  border-radius: 0.375rem;
+  transform: translateY(-0.2rem);
+}
+.main .instructionsContainer .listSteps-description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.375rem;
+}
+.main .instructionsContainer .listSteps-bold {
+  font-weight: 700;
+}
+.main .reference {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  margin-inline: auto;
+  color: #BDBDBD;
+  gap: 0 0.2rem;
+  padding: 2rem 0;
+}
+.main .reference-link:hover {
+  color: #F2994A;
+}
+
+.footer {
+  padding: 2rem 0 0 0;
+  grid-row: 8/9;
+  text-align: center;
+}
+.footer-info {
+  color: #bdbdbd;
+  font-size: 14px;
+  font-weight: 500;
+}
+.footer-autor {
+  color: var(--negro);
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */

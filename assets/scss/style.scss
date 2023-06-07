@@ -2,16 +2,15 @@
 @use '../scss/base/typography.scss' as *;
 @use '../scss/utils/shared.scss' as *;
 
-*{
- // border: SOLID RED 1px;
-}
+
 
 body{
   --clr-auxiliar: #BDBDBD;
   display: grid;
   font-family: 'Montserrat';
   color: var(--negro);
-  background-color: #fff;
+  background-color: var(--whitePlus);
+  color: var(--blackPlus);
   padding: rem(16);
 }
 
@@ -168,5 +167,91 @@ body{
         }
       }
     }
+  }
+
+  .instructionsContainer{
+
+    &-header{
+
+    }
+
+    &-title{
+      font-size: rem(24);
+      font-weight: 700;
+      line-height: rem(31.99);
+      padding: 1rem 0;
+    }
+    
+    .listSteps{
+      display: grid;
+      gap: 1.5rem;
+
+      &-step{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 1rem;
+      }
+
+      &-index{
+        width: rem(36);
+        height: rem(36);
+        display: grid;
+        place-items: center;
+        font-family: 'PlayfairDisplay', serif;
+        font-size: rem(24);
+        font-weight: 700;
+        line-height: rem(31.99);
+        background-color: map-get($colors , primary );
+        color: #fff;
+        border-radius: rem(6);
+        transform: translateY(-.2rem);
+      }
+
+      &-description{
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: rem(22);
+      }
+
+      &-bold{
+        font-weight: 700;
+      }
+    }
+  }
+
+  .reference{
+    display: flex;
+    flex-flow: row wrap;
+    font-weight: 400;
+    font-style: italic;
+    font-size: rem(12);
+    line-height: rem(18);
+    margin-inline: auto;
+    color: #BDBDBD;
+    gap: 0 .2rem;
+    padding: 2rem 0;
+
+    &-link{
+      &:hover{
+        color: map-get($colors, primary )
+      }
+    }
+  }
+}
+
+.footer{
+  padding: 2rem 0 0 0;
+  grid-row: 8/9;
+  text-align: center;
+
+  &-info{
+    color: #bdbdbd;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  &-autor{
+    color: var(--negro);
+    text-decoration: underline;
   }
 }

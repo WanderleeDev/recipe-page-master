@@ -26,9 +26,9 @@ const Recipe = () => {
         }).join('')
       }
     </ul>
-    <p>
-    <span>Source:</span>
-    <a rel="noopener noreferrer" href="https://sallysbakingaddiction.com/classic-cheesecake/">https://sallysbakingaddiction.com/classic-cheesecake/</a>
+    <p class="reference">
+    <span class="reference-span">Source:</span>
+    <a class="reference-link" rel="noopener noreferrer" href="https://sallysbakingaddiction.com/classic-cheesecake/">https://sallysbakingaddiction.com/classic-cheesecake/</a>
     </p>
   </article>
   `;

@@ -3,10 +3,9 @@
   /* Colores */
   --negro         : #393939;
   --blanco        :#ececec;
-  --blancoPlus        :#ededed66;
-  --negroPlus        :#39393966;
-  --blancoDark        :#fff;
-  --negroDark        :#000;
+  --whitePlus     : #fff;
+  --blackPlus     :  #000;
+
   
   /* Tipografía */
   --tipo-principal   : Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -18,10 +17,8 @@
   :root{
       --negro         : #ececec;
       --blanco        :#393939;
-      --negroPlus        :#ededed66;
-      --blancoPlus        :#39393966;
-      --blancoDark        :#000;
-      --negroDark        :#fff;
+      --whitePlus     : #000;
+      --blackPlus     :  #fff;
 
   }
 }
